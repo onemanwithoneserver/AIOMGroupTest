@@ -55,8 +55,8 @@
   --border-hover: #CBD5E1;
 
   --text: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #94A3B8;
+  --text-secondary: #334155;
+  --text-muted: #475569;
   --text-inverse: #FFFFFF;
   --text-on-primary: #FFFFFF;
 
@@ -150,8 +150,8 @@
   --border-hover: #334155;
 
   --text: #F1F5F9;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
   --text-inverse: #0F172A;
 
   --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
@@ -4260,7 +4260,6 @@ section { padding: var(--space-16) 0 !important; }
   animation: continuousFloat 4s ease-in-out infinite;
 }
 
-
 .theme-green .case-3d-icon { animation-delay: 0s; }
 .theme-purple .case-3d-icon { animation-delay: 1.2s; }
 .theme-orange .case-3d-icon { animation-delay: 2.4s; }
@@ -4269,11 +4268,9 @@ section { padding: var(--space-16) 0 !important; }
   animation: ripplePulse 6s ease-in-out infinite;
 }
 
-
 .ripple-1 { animation-delay: 0s; }
 .ripple-2 { animation-delay: 1s; }
 .ripple-3 { animation-delay: 2s; }
-
 
 .custom-case-card:hover .case-3d-icon {
   
@@ -4299,7 +4296,6 @@ section { padding: var(--space-16) 0 !important; }
   animation: none !important;
   transform: translateY(-15px) scale(1.1) rotateY(15deg) !important;
 }
-
 
 @keyframes logoWave {
   0% { transform: translateY(0); color: var(--primary); text-shadow: 0 0 0 transparent; }
@@ -4379,14 +4375,12 @@ section { padding: var(--space-16) 0 !important; }
 .flip-icon-wrapper { margin-bottom: 24px; }
 .flip-card-front h4 { margin: 0; font-size: 1.25rem; font-weight: 700; color: var(--text); }
 
-
 .icon-teal { background: linear-gradient(135deg, #2dd4bf 0%, #0d9488 100%); }
 .icon-blue { background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%); }
 .icon-purple { background: linear-gradient(135deg, #c084fc 0%, #7e22ce 100%); }
 .icon-yellow { background: linear-gradient(135deg, #fde047 0%, #ca8a04 100%); }
 .icon-orange { background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%); }
 .icon-cyan { background: linear-gradient(135deg, #22d3ee 0%, #0891b2 100%); }
-
 
 .bg-teal-gradient { background: linear-gradient(135deg, #0f766e 0%, #115e59 100%); }
 .bg-blue-gradient-solid { background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%); }
@@ -4488,12 +4482,10 @@ section { padding: var(--space-16) 0 !important; }
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
-
 .navbar.scrolled .nav-link { color: var(--text) !important; }
 .navbar.scrolled .brand-text-styled { color: var(--text) !important; }
 .navbar.scrolled .nav-cta { background: var(--primary) !important; color: #fff !important; border: none !important; }
 .navbar.scrolled .theme-toggle { color: var(--text) !important; border-color: var(--border) !important; }
-
 
 [data-theme="dark"] .navbar.scrolled .nav-link,
 [data-theme="dark"] .navbar.scrolled .brand-text-styled,
@@ -4516,14 +4508,12 @@ section { padding: var(--space-16) 0 !important; }
 .tech-item i.fa-database { color: #336791 !important; }
 .tech-item i.fa-leaf { color: #47A248 !important; }
 
-
 .tech-item img {
   width: 32px !important;
   height: 32px !important;
   object-fit: contain !important;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
-
 
 .tech-item {
   border-radius: var(--radius-lg) !important; 
@@ -4542,10 +4532,8 @@ section { padding: var(--space-16) 0 !important; }
 
 .custom-case-card {
   position: relative;
-  
-  
-}
 
+}
 
 .custom-case-card::before {
   content: '';
@@ -4573,7 +4561,6 @@ section { padding: var(--space-16) 0 !important; }
     background: #111827;
   }
 
-
 .case-top-half {
   background-size: 200% 200% !important;
   animation: fluid-mesh 8s ease infinite !important;
@@ -4591,7 +4578,6 @@ section { padding: var(--space-16) 0 !important; }
   background: radial-gradient(circle at bottom left, rgba(245,158,11,0.2) 0%, transparent 60%), linear-gradient(135deg, rgba(245,158,11,0.05) 0%, rgba(217,119,6,0.1) 100%) !important; 
   border-top-color: #f59e0b; 
 }
-
 
 .case-pill-badge, .case-3d-icon {
   transition: transform 0.1s ease-out; 
@@ -4645,9 +4631,9 @@ section { padding: var(--space-16) 0 !important; }
   transform: translateX(4px);
 }
 .service-card {
-  padding-bottom: 70px !important; /* Ensure space for the button at the bottom */
+  padding-bottom: 70px !important; 
 }
-/* GLOBAL POLISH: HEADINGS, GRADIENTS & BUTTONS */
+
 .gradient-text {
   background: linear-gradient(120deg, #3b82f6 0%, #8b5cf6 35%, #ec4899 70%, #10b981 100%) !important;
   background-size: 250% auto !important;
@@ -4735,7 +4721,7 @@ section { padding: var(--space-16) 0 !important; }
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
 }
-/* MULTI-COLOR GRADIENT ICONS & SVG POLISH */
+
 .c-blue, .c-purple, .c-teal, .c-orange, .c-pink, .c-yellow, .c-red, .c-cyan {
   border-radius: 50% !important;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -4798,7 +4784,7 @@ svg {
   transform: scale(1.12) rotate(4deg) !important;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25) !important;
 }
-/* HEROICONS MINIMALIST PRECISION STYLING */
+
 svg, svg path {
   stroke-linecap: round !important;
   stroke-linejoin: round !important;
@@ -4828,9 +4814,7 @@ svg, svg path {
   border-color: rgba(255, 255, 255, 0.12) !important;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
 }
-/* RESTORE NORMAL CRISP ICON COLORS & SCOPE GRADIENTS ONLY TO CARD BADGES */
 
-/* Standalone icon color utilities - normal crisp colors without gradient background */
 i.c-blue, .hero-section .c-blue, .h-badge .c-blue, .dash-metric-card .c-blue { color: #3b82f6 !important; background: transparent !important; box-shadow: none !important; }
 i.c-purple, .hero-section .c-purple, .h-badge .c-purple, .dash-metric-card .c-purple { color: #8b5cf6 !important; background: transparent !important; box-shadow: none !important; }
 i.c-teal, .hero-section .c-teal, .h-badge .c-teal, .dash-metric-card .c-teal { color: #14b8a6 !important; background: transparent !important; box-shadow: none !important; }
@@ -4841,14 +4825,12 @@ i.c-red, .hero-section .c-red, .h-badge .c-red, .dash-metric-card .c-red { color
 i.c-cyan, .hero-section .c-cyan, .h-badge .c-cyan, .dash-metric-card .c-cyan { color: #06b6d4 !important; background: transparent !important; box-shadow: none !important; }
 i.c-green, .hero-section .c-green, .h-badge .c-green, .dash-metric-card .c-green { color: #10b981 !important; background: transparent !important; box-shadow: none !important; }
 
-/* Restore soft pastel backgrounds for hero & dashboard badges */
 .bg-blue-light { background: rgba(59, 130, 246, 0.1) !important; }
 .bg-purple-light { background: rgba(139, 92, 246, 0.1) !important; }
 .bg-teal-light { background: rgba(20, 184, 166, 0.1) !important; }
 .bg-orange-light { background: rgba(249, 115, 22, 0.1) !important; }
 .bg-green-light { background: rgba(16, 185, 129, 0.1) !important; }
 
-/* Apply gradient container fills ONLY to designated card icon wrappers */
 .service-icon.c-blue, .spotlight-icon.c-blue { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important; color: #fff !important; }
 .service-icon.c-purple, .spotlight-icon.c-purple { background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%) !important; color: #fff !important; }
 .service-icon.c-teal, .spotlight-icon.c-teal { background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%) !important; color: #fff !important; }
@@ -4862,7 +4844,7 @@ i.c-green, .hero-section .c-green, .h-badge .c-green, .dash-metric-card .c-green
   margin-right: 4px !important;
   font-size: 0.85rem !important;
 }
-/* BEFORE & AFTER BUTTON GRADIENT TRANSFORMATIONS */
+
 a[href="#services"].btn-primary,
 .btn-hero-glow {
   background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 50%, #06b6d4 100%) !important;
@@ -4896,14 +4878,14 @@ a[href="#contact"].btn-secondary,
   border-color: rgba(139, 92, 246, 0.4) !important;
 }
 
-a[href="#contact"].btn-secondary:hover,
-.btn-hero-outline:hover {
-  background: linear-gradient(135deg, #8b5cf6 0%, #f43f5e 50%, #f97316 100%) !important;
-  color: #ffffff !important;
-  border-color: transparent !important;
-  box-shadow: 0 10px 28px rgba(244, 63, 94, 0.45) !important;
-  transform: translateY(-3px) scale(1.03) !important;
-}
+  a[href="#contact"].btn-secondary:hover,
+  .btn-hero-outline:hover {
+    background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #6366f1 100%) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 10px 28px rgba(59, 130, 246, 0.4) !important;
+    transform: translateY(-3px) scale(1.03) !important;
+  }
 
 .nav-cta {
   background: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #3b82f6 100%) !important;
@@ -4919,7 +4901,7 @@ a[href="#contact"].btn-secondary:hover,
   box-shadow: 0 8px 25px rgba(239, 68, 68, 0.45) !important;
   transform: translateY(-2px) scale(1.04) !important;
 }
-/* PULSENEX HEALTHCARE ECOSYSTEM ANIMATIONS */
+
 @keyframes heartPulse {
   0% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(239, 68, 68, 0)); }
   14% { transform: scale(1.25); filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.8)); }
@@ -4990,7 +4972,7 @@ a[href="#contact"].btn-secondary:hover,
   transform: scale(1.15) rotate(6deg) !important;
   box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4) !important;
 }
-/* FORM SUBMISSION ANIMATIONS */
+
 .btn-submit-loading {
   pointer-events: none;
   opacity: 0.9;
@@ -5008,7 +4990,7 @@ a[href="#contact"].btn-secondary:hover,
   transform: scale(1.2);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-/* SEND MESSAGE BUTTON MULTI-COLOR GRADIENT POLISH */
+
 .btn-contact-submit {
   background: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #7c3aed 100%) !important;
   background-size: 200% auto !important;
@@ -5025,7 +5007,6 @@ a[href="#contact"].btn-secondary:hover,
   transform: translateY(-3px) scale(1.02) !important;
 }
 
-/* Enhanced Loading Animation State */
 @keyframes loadingGradientFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -5045,7 +5026,6 @@ a[href="#contact"].btn-secondary:hover,
   animation: fa-spin 1s infinite linear;
 }
 
-/* Enhanced Success Animation State */
 .btn-contact-submit.btn-submit-success {
   background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%) !important;
   background-size: 100% auto !important;
@@ -5053,7 +5033,7 @@ a[href="#contact"].btn-secondary:hover,
   transform: scale(1.05);
   box-shadow: 0 12px 25px rgba(16, 185, 129, 0.4) !important;
 }
-*/
+
 @keyframes loadingGradientFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -5073,13 +5053,79 @@ a[href="#contact"].btn-secondary:hover,
   animation: fa-spin 1s infinite linear;
 }
 
-/* Enhanced Success Animation State */
 .btn-contact-submit.btn-submit-success {
   background: linear-gradient(135deg, #059669 0%, #10b981 50%, #06b6d4 100%) !important;
   background-size: 100% auto !important;
   animation: none !important;
   transform: scale(1.05);
   box-shadow: 0 12px 25px rgba(16, 185, 129, 0.5) !important;
+}
+[data-theme="dark"] .pnx-glow-1, [data-theme="dark"] .pnx-glow-2 {
+  opacity: 0.5 !important; 
+}
+
+[data-theme="dark"] .pnx-badge {
+  color: #34d399 !important; 
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+[data-theme="dark"] .gradient-text {
+  background: linear-gradient(120deg, #60A5FA 0%, #C084FC 35%, #F472B6 70%, #34D399 100%) !important;
+  background-size: 250% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 0 30px rgba(192, 132, 252, 0.5), 0 2px 5px rgba(0,0,0,0.5) !important;
+}
+
+[data-theme="dark"] .pnx-title {
+  color: #FFFFFF !important;
+}
+
+.pnx-module-item {
+  color: #F1F5F9 !important; 
+  padding: 10px 16px !important;
+  margin-bottom: 8px !important;
+}
+
+.pnx-module-item:hover {
+  color: var(--primary) !important;
+}
+
+.spotlight-grid {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+[data-theme="dark"] .spotlight-grid {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.spotlight-card {
+  border-radius: 20px !important;
+}
+.spotlight-card-content {
+  border: 1px solid var(--border) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.spotlight-card:hover .spotlight-card-content {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08) !important;
+}
+
+[data-theme="dark"] .spotlight-card-content {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+}
+[data-theme="dark"] .spotlight-card:hover .spotlight-card-content {
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5) !important;
 }
 </style>
 </head>
@@ -5727,8 +5773,7 @@ a[href="#contact"].btn-secondary:hover,
             </div>
           </div>
 
-          
-          <div class="case-card custom-case-card theme-purple" data-reveal data-reveal-delay="1">
+<div class="case-card custom-case-card theme-purple" data-reveal data-reveal-delay="1">
             <div class="case-top-half">
               <div class="case-pill-badge badge-purple"><i class="fas fa-university"></i> Government Enterprise</div>
               <div class="case-visual-wrapper">
@@ -5761,8 +5806,7 @@ a[href="#contact"].btn-secondary:hover,
             </div>
           </div>
 
-          
-          <div class="case-card custom-case-card theme-orange" data-reveal data-reveal-delay="2">
+<div class="case-card custom-case-card theme-orange" data-reveal data-reveal-delay="2">
             <div class="case-top-half">
               <div class="case-pill-badge badge-orange"><i class="fas fa-shield-alt"></i> Healthcare MCO / FinTech</div>
               <div class="case-visual-wrapper">
@@ -5893,7 +5937,7 @@ enterprise technology can achieve.</p>
 
                                   <div class="form-group">
                     <label class="form-label" for="cf-service">Service Interest</label>
-                    <div class="custom-select-wrapper" id="serviceDropdown">
+                    <div class="custom-select-wrapper" id="serviceDropdown" role="listbox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="cf-service">
                       
                       <select id="cf-service" name="service" class="hidden-select">
                         <option value="">Select a specific service</option>
@@ -5906,23 +5950,22 @@ enterprise technology can achieve.</p>
                         <option value="consulting">Enterprise IT Consulting</option>
                         <option value="other">Other Inquiry</option>
                       </select>
-                      
-                      
-                      <div class="custom-select-trigger form-input">
+
+<div class="custom-select-trigger form-input" tabindex="0" role="combobox" aria-controls="serviceDropdownOptions" aria-expanded="false">
                         <span class="custom-select-value">Select a specific service</span>
                         <i class="fas fa-chevron-down custom-select-icon"></i>
                       </div>
                       
-                      <div class="custom-select-options">
-                        <div class="custom-option selected" data-value="">Select a specific service</div>
-                        <div class="custom-option" data-value="software">Software Development</div>
-                        <div class="custom-option" data-value="ai">AI & Machine Learning Solutions</div>
-                        <div class="custom-option" data-value="pulsenex">PulseNeX Healthcare Platform</div>
-                        <div class="custom-option" data-value="cloud">Cloud Architecture & Migration</div>
-                        <div class="custom-option" data-value="mobile">Mobile App Development</div>
-                        <div class="custom-option" data-value="transformation">Comprehensive Digital Transformation</div>
-                        <div class="custom-option" data-value="consulting">Enterprise IT Consulting</div>
-                        <div class="custom-option" data-value="other">Other Inquiry</div>
+                      <div class="custom-select-options" id="serviceDropdownOptions" role="listbox">
+                        <div class="custom-option selected" data-value="" role="option" aria-selected="true">Select a specific service</div>
+                        <div class="custom-option" data-value="software" role="option" aria-selected="false">Software Development</div>
+                        <div class="custom-option" data-value="ai" role="option" aria-selected="false">AI & Machine Learning Solutions</div>
+                        <div class="custom-option" data-value="pulsenex" role="option" aria-selected="false">PulseNeX Healthcare Platform</div>
+                        <div class="custom-option" data-value="cloud" role="option" aria-selected="false">Cloud Architecture & Migration</div>
+                        <div class="custom-option" data-value="mobile" role="option" aria-selected="false">Mobile App Development</div>
+                        <div class="custom-option" data-value="transformation" role="option" aria-selected="false">Comprehensive Digital Transformation</div>
+                        <div class="custom-option" data-value="consulting" role="option" aria-selected="false">Enterprise IT Consulting</div>
+                        <div class="custom-option" data-value="other" role="option" aria-selected="false">Other Inquiry</div>
                       </div>
                     </div>
                   </div>
