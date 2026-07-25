@@ -2315,6 +2315,12 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
+.stats-grid .stat-card:nth-child(1) .stat-number { background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.stats-grid .stat-card:nth-child(2) .stat-number { background: var(--gradient-info); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.stats-grid .stat-card:nth-child(3) .stat-number { background: var(--gradient-purple-glow); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.stats-grid .stat-card:nth-child(4) .stat-number { background: var(--gradient-success); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.stats-grid .stat-card:nth-child(5) .stat-number { background: var(--gradient-warning); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
 .stat-label {
   font-size: 0.95rem;
   color: var(--text-secondary);
@@ -3620,8 +3626,9 @@ section { padding: var(--space-16) 0 !important; }
   transition: all var(--transition-fast);
   display: inline-block;
   text-decoration: underline dotted;
+  text-underline-offset: 4px;
 }
-.footer-legal-links a { text-decoration: underline solid !important; white-space: nowrap; }
+.footer-legal-links a { text-decoration: underline solid !important; text-underline-offset: 4px; white-space: nowrap; }
 .service-btn {
   display: inline-flex;
   align-items: center;
@@ -5127,7 +5134,6 @@ a[href="#contact"].btn-secondary,
 [data-theme="dark"] .spotlight-card:hover .spotlight-card-content {
   box-shadow: 0 15px 40px rgba(0,0,0,0.5) !important;
 }
-/* HEADER NAVBAR POLISH & HOVER UNDERLINE */
 .navbar .container {
   display: flex !important;
   align-items: center !important;
@@ -5153,7 +5159,6 @@ a[href="#contact"].btn-secondary,
   justify-content: flex-end !important;
 }
 
-/* Nav Link Animated Underline */
 .nav-link {
   position: relative !important;
   background: transparent !important;
@@ -5181,6 +5186,123 @@ a[href="#contact"].btn-secondary,
 
 .nav-link:hover {
   color: var(--primary) !important;
+}
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.65);
+  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  --glass-blur: blur(20px) saturate(180%);
+  --glass-bg-dark: rgba(15, 23, 42, 0.55);
+  --glass-border-dark: rgba(255, 255, 255, 0.12);
+  --glass-shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --liquid-blue: rgba(37, 99, 235, 0.32);
+  --liquid-purple: rgba(139, 92, 246, 0.3);
+  --liquid-cyan: rgba(6, 182, 212, 0.28);
+  --liquid-pink: rgba(236, 72, 153, 0.26);
+}
+
+[data-theme="dark"] {
+  --glass-bg: rgba(15, 23, 42, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --liquid-blue: rgba(96, 165, 250, 0.3);
+  --liquid-purple: rgba(192, 132, 252, 0.28);
+  --liquid-cyan: rgba(45, 212, 191, 0.26);
+  --liquid-pink: rgba(244, 114, 182, 0.24);
+}
+
+@keyframes liquidMorph {
+  0%, 100% { border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%; transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  25%      { border-radius: 58% 42% 40% 60% / 62% 36% 64% 38%; transform: translate3d(3%, -4%, 0) rotate(10deg) scale(1.06); }
+  50%      { border-radius: 65% 35% 55% 45% / 38% 62% 40% 60%; transform: translate3d(-3%, 3%, 0) rotate(-8deg) scale(0.96); }
+  75%      { border-radius: 38% 62% 46% 54% / 55% 40% 60% 45%; transform: translate3d(2%, 2%, 0) rotate(5deg) scale(1.03); }
+}
+
+.hero-orb, .about-ambient-glow {
+  animation-name: liquidMorph !important;
+  animation-duration: 22s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-iteration-count: infinite !important;
+  border-radius: 42% 58% 65% 35% / 45% 45% 55% 55% !important;
+}
+.hero-orb-2, .about-ambient-glow.glow-2 { animation-duration: 28s !important; animation-direction: reverse !important; }
+.hero-orb-3 { animation-duration: 18s !important; }
+
+#services, #industries, #tech, #features, #stats, #casestudies, #team, #contact, .site-footer, #pulseneX {
+  position: relative !important;
+  overflow: hidden;
+}
+#services > .container, #industries > .container, #tech > .container, #features > .container,
+#stats > .container, #casestudies > .container, #team > .container, #contact > .container,
+.site-footer > .container, #pulseneX > .container {
+  position: relative;
+  z-index: 2;
+}
+
+#services::before, #industries::before, #tech::before, #features::before, #stats::before,
+#casestudies::before, #team::before, #contact::before, #contact::after,
+.site-footer::before, #pulseneX::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(70px);
+  border-radius: 50%;
+  animation: liquidMorph 24s ease-in-out infinite;
+}
+
+#services::before    { top: -18%; left: -10%;  width: 420px; height: 420px; background: var(--liquid-blue); }
+#industries::before  { top: -14%; right: -8%;  width: 360px; height: 360px; background: var(--liquid-pink); animation-duration: 26s; }
+#tech::before        { bottom: -16%; left: -8%; width: 340px; height: 340px; background: var(--liquid-cyan); animation-duration: 22s; }
+#features::before    { top: -14%; left: -6%;   width: 360px; height: 360px; background: var(--liquid-purple); animation-duration: 27s; }
+#stats::before        { bottom: -18%; right: -8%; width: 380px; height: 380px; background: var(--liquid-blue); animation-duration: 25s; }
+#casestudies::before  { top: -16%; right: -10%; width: 380px; height: 380px; background: var(--liquid-cyan); animation-duration: 23s; }
+#team::before         { bottom: -18%; left: -8%; width: 360px; height: 360px; background: var(--liquid-pink); animation-duration: 29s; }
+#contact::before      { top: -16%; left: -10%;  width: 400px; height: 400px; background: var(--liquid-blue); animation-duration: 24s; }
+#contact::after       { bottom: -20%; right: -12%; width: 360px; height: 360px; background: var(--liquid-purple); animation-duration: 30s; animation-direction: reverse; }
+.site-footer::before  { top: -20%; right: -10%; width: 420px; height: 420px; background: var(--liquid-blue); animation-duration: 30s; opacity: 0.4; }
+#pulseneX::before     { top: -16%; right: -10%; width: 380px; height: 380px; background: var(--liquid-purple); animation-duration: 26s; opacity: 0.35; }
+
+.service-card,
+.about-bento-card,
+.stat-card,
+.case-card,
+.team-card,
+.contact-form-card,
+.feature-card,
+.spotlight-card-content,
+.form-input {
+  background: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--glass-shadow) !important;
+}
+
+.navbar:not(.scrolled) {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.pnx-app-card,
+.footer-social-link {
+  background: var(--glass-bg-dark) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border: 1px solid var(--glass-border-dark) !important;
+  box-shadow: var(--glass-shadow-dark) !important;
+}
+
+.site-footer {
+  background: rgba(11, 17, 32, 0.94) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border-top: 1px solid var(--glass-border-dark) !important;
+  box-shadow: var(--glass-shadow-dark) !important;
 }
 </style>
 </head>
