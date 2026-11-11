@@ -1362,17 +1362,34 @@
       }
 
       .nav-cta span,
-      .nav-cta i {
+      .nav-cta i,
+      .nav-cta .svg-arrow {
         position: relative;
         z-index: 1;
       }
 
+      .svg-arrow {
+        width: 1.15em;
+        height: 1.15em;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 0.45rem;
+        flex-shrink: 0;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
       .nav-cta .nav-cta-arrow {
-        transition: transform 0.25s ease;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
       .nav-cta:hover .nav-cta-arrow,
-      .nav-cta:focus-visible .nav-cta-arrow {
+      .nav-cta:focus-visible .nav-cta-arrow,
+      .btn:hover .svg-arrow,
+      .btn:focus-visible .svg-arrow,
+      .btn-primary:hover .svg-arrow,
+      .btn-primary:focus-visible .svg-arrow,
+      .btn-hero-glow:hover .svg-arrow,
+      .btn-hero-glow:focus-visible .svg-arrow {
         transform: translateX(4px);
       }
 
@@ -6997,10 +7014,16 @@
         font-weight: 600;
         margin-right: 0;
       }
-      .card-link-icon i {
+      .card-link-icon i,
+      .card-link-icon .svg-arrow {
         transform: translateX(0);
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         font-size: 1rem;
+      }
+      .card-link-icon .svg-arrow {
+        width: 1.1rem;
+        height: 1.1rem;
+        margin-left: 0;
       }
       .polished-service-card:hover .card-link-icon {
         background: var(--primary);
@@ -7014,7 +7037,8 @@
         opacity: 1;
         margin-right: 8px;
       }
-      .polished-service-card:hover .card-link-icon i {
+      .polished-service-card:hover .card-link-icon i,
+      .polished-service-card:hover .card-link-icon .svg-arrow {
         transform: translateX(4px);
       }
       .service-card {
@@ -9206,7 +9230,9 @@
           </button>
           <a class="nav-cta" href="#contact">
             <span>Get Started</span>
-            <i class="fas fa-arrow-right nav-cta-arrow" aria-hidden="true"></i>
+            <svg class="svg-arrow nav-cta-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M4.167 10h11.666m-4.583-4.583L15.833 10l-4.583 4.583" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </a>
           <button
             id="mobileToggle"
@@ -9308,8 +9334,10 @@
                   class="btn-primary btn-gradient btn-hero-glow"
                   ><i class="fas fa-rocket"></i>
                   <span>Explore Services</span>
-                  <i class="fas fa-arrow-right" aria-hidden="true"></i
-                ></a>
+                  <svg class="svg-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <path d="M4.167 10h11.666m-4.583-4.583L15.833 10l-4.583 4.583" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg></a
+                >
                 <a
                   href="#contact"
                   class="btn-secondary btn-outline btn-hero-outline"
@@ -9627,7 +9655,10 @@
                 impact across every industry we serve.
               </p>
               <button class="btn btn-primary aiom-style-38">
-                Discover Our Story <i class="fas fa-arrow-right"></i>
+                <span>Discover Our Story</span>
+                <svg class="svg-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <path d="M4.167 10h11.666m-4.583-4.583L15.833 10l-4.583 4.583" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </button>
             </div>
 
@@ -9755,8 +9786,10 @@
                 <li>Legacy Modernization</li>
               </ul>
               <div class="card-link-icon">
-                <span class="link-text">Get the Service</span
-                ><i class="fas fa-arrow-right"></i>
+                <span class="link-text">Get the Service</span>
+                <svg class="svg-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <path d="M4.167 10h11.666m-4.583-4.583L15.833 10l-4.583 4.583" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </div>
             </a>
 
@@ -9791,8 +9824,10 @@
                 <li>Custom LLM Training</li>
               </ul>
               <div class="card-link-icon">
-                <span class="link-text">Get the Service</span
-                ><i class="fas fa-arrow-right"></i>
+                <span class="link-text">Get the Service</span>
+                <svg class="svg-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <path d="M4.167 10h11.666m-4.583-4.583L15.833 10l-4.583 4.583" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </div>
             </a>
 
@@ -9827,8 +9862,10 @@
                 <li>Cost Optimization</li>
               </ul>
               <div class="card-link-icon">
-                <span class="link-text">Get the Service</span
-                ><i class="fas fa-arrow-right"></i>
+                <span class="link-text">Get the Service</span>
+                <svg class="svg-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <path d="M4.167 10h11.666m-4.583-4.583L15.833 10l-4.583 4.583" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </div>
             </a>
 
@@ -9862,8 +9899,10 @@
                 <li>IoT Connectivity</li>
               </ul>
               <div class="card-link-icon">
-                <span class="link-text">Get the Service</span
-                ><i class="fas fa-arrow-right"></i>
+                <span class="link-text">Get the Service</span>
+                <svg class="svg-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <path d="M4.167 10h11.666m-4.583-4.583L15.833 10l-4.583 4.583" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </div>
             </a>
 
@@ -9898,8 +9937,10 @@
                 <li>E-commerce Solutions</li>
               </ul>
               <div class="card-link-icon">
-                <span class="link-text">Get the Service</span
-                ><i class="fas fa-arrow-right"></i>
+                <span class="link-text">Get the Service</span>
+                <svg class="svg-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <path d="M4.167 10h11.666m-4.583-4.583L15.833 10l-4.583 4.583" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </div>
             </a>
 
@@ -9934,8 +9975,10 @@
                 <li>Interaction Design</li>
               </ul>
               <div class="card-link-icon">
-                <span class="link-text">Get the Service</span
-                ><i class="fas fa-arrow-right"></i>
+                <span class="link-text">Get the Service</span>
+                <svg class="svg-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <path d="M4.167 10h11.666m-4.583-4.583L15.833 10l-4.583 4.583" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </div>
             </a>
 
@@ -9970,8 +10013,10 @@
                 <li>Incident Response</li>
               </ul>
               <div class="card-link-icon">
-                <span class="link-text">Get the Service</span
-                ><i class="fas fa-arrow-right"></i>
+                <span class="link-text">Get the Service</span>
+                <svg class="svg-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <path d="M4.167 10h11.666m-4.583-4.583L15.833 10l-4.583 4.583" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </div>
             </a>
 
@@ -10006,8 +10051,10 @@
                 <li>Data Governance</li>
               </ul>
               <div class="card-link-icon">
-                <span class="link-text">Get the Service</span
-                ><i class="fas fa-arrow-right"></i>
+                <span class="link-text">Get the Service</span>
+                <svg class="svg-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <path d="M4.167 10h11.666m-4.583-4.583L15.833 10l-4.583 4.583" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </div>
             </a>
           </div>
@@ -10031,7 +10078,11 @@
                 and patient care.
               </p>
               <a href="#contact" class="btn-primary aiom-style-38"
-                ><i class="fas fa-stethoscope"></i> Request a Demo</a
+                ><i class="fas fa-stethoscope"></i>
+                <span>Request a Demo</span>
+                <svg class="svg-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <path d="M4.167 10h11.666m-4.583-4.583L15.833 10l-4.583 4.583" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg></a
               >
               <div class="pnx-modules-list aiom-style-45">
                 <div class="pnx-module-item">
@@ -11344,7 +11395,11 @@
             const btn = document.getElementById("scrollTop");
             if (!btn) return;
             btn.addEventListener("click", () => {
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              if (typeof slowSmoothScrollTo === "function") {
+                slowSmoothScrollTo(0, 1100);
+              } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
             });
           }
 
@@ -11531,11 +11586,12 @@
                 entries.forEach((entry) => {
                   if (entry.isIntersecting) {
                     entry.target.classList.add("revealed");
-                    observer.unobserve(entry.target);
+                  } else {
+                    entry.target.classList.remove("revealed");
                   }
                 });
               },
-              { threshold: 0.1, rootMargin: "0px 0px -60px 0px" },
+              { threshold: 0.08, rootMargin: "0px 0px -30px 0px" },
             );
 
             els.forEach((el) => observer.observe(el));
@@ -11547,10 +11603,16 @@
             );
             if (!counters.length) return;
 
+            const activeAnimations = new Map();
+
             function animate(el) {
+              if (activeAnimations.has(el)) {
+                cancelAnimationFrame(activeAnimations.get(el));
+              }
+
               const target = parseFloat(el.getAttribute("data-count") || "0");
               const suffix = el.getAttribute("data-suffix") || "";
-              const duration = 1800;
+              const duration = 1600;
               const start = performance.now();
 
               function step(now) {
@@ -11561,10 +11623,24 @@
                   (target % 1 === 0 ? Math.round(val) : val.toFixed(1)) +
                   suffix;
 
-                if (t < 1) requestAnimationFrame(step);
-                else el.textContent = target + suffix;
+                if (t < 1) {
+                  activeAnimations.set(el, requestAnimationFrame(step));
+                } else {
+                  el.textContent = target + suffix;
+                  activeAnimations.delete(el);
+                }
               }
-              requestAnimationFrame(step);
+
+              activeAnimations.set(el, requestAnimationFrame(step));
+            }
+
+            function reset(el) {
+              if (activeAnimations.has(el)) {
+                cancelAnimationFrame(activeAnimations.get(el));
+                activeAnimations.delete(el);
+              }
+              const suffix = el.getAttribute("data-suffix") || "";
+              el.textContent = "0" + suffix;
             }
 
             if (!("IntersectionObserver" in window)) {
@@ -11581,11 +11657,12 @@
                 entries.forEach((entry) => {
                   if (entry.isIntersecting) {
                     animate(entry.target);
-                    observer.unobserve(entry.target);
+                  } else {
+                    reset(entry.target);
                   }
                 });
               },
-              { threshold: 0.3 },
+              { threshold: 0.15 },
             );
 
             counters.forEach((c) => observer.observe(c));
@@ -11767,6 +11844,89 @@
             }, 20000);
           }
 
+          let scrollAnimId = null;
+
+          function slowSmoothScrollTo(targetY, customDuration) {
+            if (scrollAnimId) {
+              cancelAnimationFrame(scrollAnimId);
+              scrollAnimId = null;
+            }
+
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+              window.scrollTo(0, targetY);
+              return;
+            }
+
+            const startY =
+              window.pageYOffset || document.documentElement.scrollTop;
+            const diff = targetY - startY;
+            if (Math.abs(diff) < 2) return;
+
+            const distance = Math.abs(diff);
+            const duration =
+              customDuration ||
+              Math.min(1700, Math.max(1050, Math.sqrt(distance) * 38));
+            const startTime = performance.now();
+            const root = document.documentElement;
+            const prevScrollBehavior = root.style.scrollBehavior;
+            root.style.scrollBehavior = "auto";
+
+            function easeInOutCubic(t) {
+              return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            }
+
+            function cleanup() {
+              if (scrollAnimId) {
+                cancelAnimationFrame(scrollAnimId);
+                scrollAnimId = null;
+              }
+              root.style.scrollBehavior = prevScrollBehavior;
+              window.removeEventListener("wheel", cancelScroll);
+              window.removeEventListener("touchmove", cancelScroll);
+              window.removeEventListener("keydown", cancelOnKey);
+            }
+
+            function cancelScroll() {
+              cleanup();
+            }
+
+            function cancelOnKey(e) {
+              if (
+                e.key === "ArrowUp" ||
+                e.key === "ArrowDown" ||
+                e.key === "PageUp" ||
+                e.key === "PageDown" ||
+                e.key === "Home" ||
+                e.key === "End" ||
+                e.key === " "
+              ) {
+                cleanup();
+              }
+            }
+
+            window.addEventListener("wheel", cancelScroll, { passive: true });
+            window.addEventListener("touchmove", cancelScroll, {
+              passive: true,
+            });
+            window.addEventListener("keydown", cancelOnKey, { passive: true });
+
+            function step(currentTime) {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const easedProgress = easeInOutCubic(progress);
+
+              window.scrollTo(0, startY + diff * easedProgress);
+
+              if (progress < 1) {
+                scrollAnimId = requestAnimationFrame(step);
+              } else {
+                cleanup();
+              }
+            }
+
+            scrollAnimId = requestAnimationFrame(step);
+          }
+
           function smoothAnchorScroll() {
             const nav = document.querySelector(".navbar");
 
@@ -11775,9 +11935,22 @@
                 const id = a.getAttribute("href");
                 if (!id || id === "#") return;
 
+                const navLinks = document.getElementById("navLinks");
+                const mobileToggle = document.getElementById("mobileToggle");
+                const backdrop = document.getElementById("navBackdrop");
+                if (navLinks && navLinks.classList.contains("open")) {
+                  navLinks.classList.remove("open");
+                  if (mobileToggle) {
+                    mobileToggle.classList.remove("active");
+                    mobileToggle.setAttribute("aria-expanded", "false");
+                  }
+                  if (backdrop) backdrop.classList.remove("show");
+                }
+
                 if (id === "#hero") {
                   e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  slowSmoothScrollTo(0, 1100);
+                  if (history.pushState) history.pushState(null, "", id);
                   return;
                 }
 
@@ -11786,13 +11959,14 @@
 
                 e.preventDefault();
 
-                const navH = nav ? nav.offsetHeight + 16 : 0;
+                const navH = nav ? nav.offsetHeight : 70;
                 const targetY = Math.max(
                   0,
                   target.getBoundingClientRect().top + window.scrollY - navH,
                 );
 
-                window.scrollTo({ top: targetY, behavior: "smooth" });
+                slowSmoothScrollTo(targetY);
+                if (history.pushState) history.pushState(null, "", id);
               });
             });
           }
@@ -11831,14 +12005,131 @@
           }
 
           function settleBentoAnimations() {
+            const bentoContainer = document.querySelector(".about-bento-cards");
             const cards = document.querySelectorAll(".bento-animate");
-            cards.forEach((card) => {
-              card.addEventListener(
-                "animationend",
-                () => card.classList.add("anim-settled"),
-                { once: true },
+            if (!bentoContainer || !cards.length) return;
+
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    cards.forEach((card) => {
+                      card.classList.remove("anim-settled");
+                      card.style.animation = "none";
+                      card.offsetHeight;
+                      card.style.animation = "";
+                      card.addEventListener(
+                        "animationend",
+                        () => card.classList.add("anim-settled"),
+                        { once: true },
+                      );
+                    });
+                  } else {
+                    cards.forEach((card) => {
+                      card.classList.remove("anim-settled");
+                    });
+                  }
+                });
+              },
+              { threshold: 0.15 },
+            );
+
+            observer.observe(bentoContainer);
+          }
+
+          function initHeroRestart() {
+            const hero = document.getElementById("hero");
+            if (!hero) return;
+            const heroFades = hero.querySelectorAll(".hero-anim-fade");
+            if (!heroFades.length) return;
+
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    heroFades.forEach((el) => {
+                      el.style.animation = "none";
+                      el.offsetHeight;
+                      el.style.animation = "";
+                    });
+                  }
+                });
+              },
+              { threshold: 0.15 },
+            );
+
+            observer.observe(hero);
+          }
+
+          function initHeroInteractive() {
+            const heroSection = document.getElementById("hero");
+            const dashboard = document.querySelector(".floating-dashboard");
+            if (!heroSection || !dashboard) return;
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+              return;
+
+            let mouseX = 0;
+            let mouseY = 0;
+            let currentTiltX = 0;
+            let currentTiltY = 0;
+            let isHovering = false;
+            let rafId = null;
+
+            function onMouseMove(e) {
+              const rect = heroSection.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              heroSection.style.setProperty(
+                "--hero-mouse-x",
+                `${((x / rect.width) * 100).toFixed(2)}%`,
               );
+              heroSection.style.setProperty(
+                "--hero-mouse-y",
+                `${((y / rect.height) * 100).toFixed(2)}%`,
+              );
+
+              const dRect = dashboard.getBoundingClientRect();
+              const dCenterX = dRect.left + dRect.width / 2;
+              const dCenterY = dRect.top + dRect.height / 2;
+              const deltaX = (e.clientX - dCenterX) / (window.innerWidth / 2);
+              const deltaY = (e.clientY - dCenterY) / (window.innerHeight / 2);
+
+              mouseX = Math.max(-1, Math.min(1, deltaX));
+              mouseY = Math.max(-1, Math.min(1, deltaY));
+
+              if (!isHovering) {
+                isHovering = true;
+                loop();
+              }
+            }
+
+            function loop() {
+              if (!isHovering) return;
+              const targetTiltX = mouseY * -6;
+              const targetTiltY = mouseX * 8;
+              currentTiltX += (targetTiltX - currentTiltX) * 0.08;
+              currentTiltY += (targetTiltY - currentTiltY) * 0.08;
+
+              dashboard.style.transform = `perspective(1400px) rotateX(${currentTiltX.toFixed(2)}deg) rotateY(${currentTiltY.toFixed(2)}deg) translateZ(10px)`;
+              rafId = requestAnimationFrame(loop);
+            }
+
+            function onMouseLeave() {
+              isHovering = false;
+              if (rafId) cancelAnimationFrame(rafId);
+              dashboard.style.transition =
+                "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)";
+              dashboard.style.transform =
+                "perspective(1400px) rotateX(0deg) rotateY(0deg) translateZ(0px)";
+              setTimeout(() => {
+                dashboard.style.transition = "";
+              }, 800);
+            }
+
+            heroSection.addEventListener("mousemove", onMouseMove, {
+              passive: true,
             });
+            heroSection.addEventListener("mouseleave", onMouseLeave);
           }
 
           initTheme();
@@ -11858,6 +12149,8 @@
           bindThemeToggle();
           initMarquee();
           settleBentoAnimations();
+          initHeroInteractive();
+          initHeroRestart();
         });
       })();
 
