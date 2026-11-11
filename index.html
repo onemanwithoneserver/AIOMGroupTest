@@ -106,10 +106,10 @@
         );
 
         --gradient-hero: linear-gradient(
-          180deg,
-          #f8fafc 0%,
-          #eff6ff 50%,
-          #f0f9ff 100%
+          135deg,
+          #eff6ff 0%,
+          #f5f3ff 45%,
+          #fdf2f8 100%
         );
         --gradient-mesh-1: radial-gradient(
           at 20% 30%,
@@ -1166,14 +1166,15 @@
       }
 
       #hero {
-        min-height: 100vh;
+        min-height: auto;
         position: relative;
         display: flex;
         align-items: center;
         background: var(--gradient-hero);
         overflow: hidden;
-        padding-top: calc(var(--nav-height) + var(--space-8));
-        padding-bottom: var(--space-12);
+        margin-top: calc(var(--nav-height, 70px) + 2rem);
+        padding-top: 3rem;
+        padding-bottom: 4rem;
         z-index: var(--z-base);
       }
 
@@ -1243,6 +1244,55 @@
         animation-delay: -6s;
       }
 
+      .hero-waves {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 140px;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .hero-wave-layer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 200%;
+        height: 100%;
+      }
+
+      .wave-back {
+        animation: heroWaveDrift 22s linear infinite;
+      }
+      .wave-back path {
+        fill: rgba(37, 99, 235, 0.14);
+      }
+
+      .wave-mid {
+        animation: heroWaveDrift 16s linear infinite reverse;
+      }
+      .wave-mid path {
+        fill: rgba(139, 92, 246, 0.16);
+      }
+
+      .wave-front {
+        animation: heroWaveDrift 11s linear infinite;
+      }
+      .wave-front path {
+        fill: rgba(236, 72, 153, 0.14);
+      }
+
+      @keyframes heroWaveDrift {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
       .hero-content.split-hero {
         display: grid;
         grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
@@ -1286,12 +1336,7 @@
       }
 
       .hero-title .highlight-blue {
-        background: linear-gradient(
-          135deg,
-          #2563eb 0%,
-          #06b6d4 50%,
-          #10b981 100%
-        );
+        background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
         background-size: 200% auto;
         -webkit-background-clip: text;
         background-clip: text;
@@ -1301,12 +1346,7 @@
       }
 
       .hero-title .highlight-orange {
-        background: linear-gradient(
-          135deg,
-          #f59e0b 0%,
-          #f43f5e 50%,
-          #ec4899 100%
-        );
+        background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
         background-size: 200% auto;
         -webkit-background-clip: text;
         background-clip: text;
@@ -2132,6 +2172,12 @@
         box-shadow: var(--shadow-lg);
       }
 
+      .bento-animate.anim-settled {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+
       .about-bento-card:hover {
         transform: translateY(-6px) scale(1.01);
         box-shadow: var(--shadow-xl), var(--shadow-glow);
@@ -2228,6 +2274,296 @@
         );
         pointer-events: none;
         z-index: -1;
+      }
+
+      .about-bento-header,
+      .about-bento-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .about-bento-icon {
+        border-radius: 14px;
+      }
+
+      .about-bento-card {
+        color: var(--primary);
+      }
+
+      .about-bento-card::after {
+        content: "";
+        position: absolute;
+        right: -20px;
+        bottom: -20px;
+        width: 130px;
+        height: 100px;
+        background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+        background-size: 12px 12px;
+        -webkit-mask-image: linear-gradient(135deg, transparent 30%, #000 100%);
+        mask-image: linear-gradient(135deg, transparent 30%, #000 100%);
+        opacity: 0.18;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .about-bento-card.accent-blue {
+        border-color: rgba(37, 99, 235, 0.3) !important;
+      }
+      .about-bento-card.accent-teal {
+        color: #14b8a6;
+        border-color: rgba(20, 184, 166, 0.3) !important;
+      }
+      .about-bento-card.accent-purple {
+        color: #8b5cf6;
+        border-color: rgba(139, 92, 246, 0.3) !important;
+      }
+      .about-bento-card.accent-orange {
+        color: #f97316;
+        border-color: rgba(249, 115, 22, 0.3) !important;
+      }
+
+      .about-bento-card.accent-blue:hover {
+        border-color: rgba(37, 99, 235, 0.55) !important;
+        box-shadow: var(--shadow-xl), 0 0 30px rgba(37, 99, 235, 0.22) !important;
+      }
+      .about-bento-card.accent-teal:hover {
+        border-color: rgba(20, 184, 166, 0.55) !important;
+        box-shadow: var(--shadow-xl), 0 0 30px rgba(20, 184, 166, 0.22) !important;
+      }
+      .about-bento-card.accent-purple:hover {
+        border-color: rgba(139, 92, 246, 0.55) !important;
+        box-shadow: var(--shadow-xl), 0 0 30px rgba(139, 92, 246, 0.22) !important;
+      }
+      .about-bento-card.accent-orange:hover {
+        border-color: rgba(249, 115, 22, 0.55) !important;
+        box-shadow: var(--shadow-xl), 0 0 30px rgba(249, 115, 22, 0.22) !important;
+      }
+
+      .about-bento-card .bg-teal-gradient {
+        background: linear-gradient(135deg, #2dd4bf 0%, #0d9488 100%);
+      }
+      .about-bento-card .bg-orange-gradient {
+        background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+      }
+
+      .service-icon,
+      .pnx-app-icon {
+        border-radius: 14px;
+      }
+
+      .pnx-app-card {
+        position: relative;
+        overflow: hidden;
+        color: var(--primary);
+      }
+      .pnx-app-card .pnx-app-header,
+      .pnx-app-card .pnx-app-info {
+        position: relative;
+        z-index: 1;
+      }
+      .pnx-app-card::after {
+        content: "";
+        position: absolute;
+        right: -20px;
+        bottom: -20px;
+        width: 130px;
+        height: 100px;
+        background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+        background-size: 12px 12px;
+        -webkit-mask-image: linear-gradient(135deg, transparent 30%, #000 100%);
+        mask-image: linear-gradient(135deg, transparent 30%, #000 100%);
+        opacity: 0.3;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .pnx-app-card.accent-teal {
+        color: #2dd4bf;
+      }
+      .pnx-app-card.accent-purple {
+        color: #a78bfa;
+      }
+      .pnx-app-card.accent-orange {
+        color: #fb923c;
+      }
+      .pnx-app-card.accent-pink {
+        color: #f472b6;
+      }
+
+      .pnx-app-card.accent-blue {
+        border-color: rgba(59, 130, 246, 0.3) !important;
+      }
+      .pnx-app-card.accent-teal {
+        border-color: rgba(45, 212, 191, 0.3) !important;
+      }
+      .pnx-app-card.accent-purple {
+        border-color: rgba(167, 139, 250, 0.3) !important;
+      }
+      .pnx-app-card.accent-orange {
+        border-color: rgba(251, 146, 60, 0.3) !important;
+      }
+      .pnx-app-card.accent-pink {
+        border-color: rgba(244, 114, 182, 0.3) !important;
+      }
+
+      .pnx-app-card.accent-blue:hover {
+        border-color: rgba(59, 130, 246, 0.6) !important;
+        box-shadow: var(--shadow-2xl), 0 0 30px rgba(59, 130, 246, 0.25) !important;
+      }
+      .pnx-app-card.accent-teal:hover {
+        border-color: rgba(45, 212, 191, 0.6) !important;
+        box-shadow: var(--shadow-2xl), 0 0 30px rgba(45, 212, 191, 0.25) !important;
+      }
+      .pnx-app-card.accent-purple:hover {
+        border-color: rgba(167, 139, 250, 0.6) !important;
+        box-shadow: var(--shadow-2xl), 0 0 30px rgba(167, 139, 250, 0.25) !important;
+      }
+      .pnx-app-card.accent-orange:hover {
+        border-color: rgba(251, 146, 60, 0.6) !important;
+        box-shadow: var(--shadow-2xl), 0 0 30px rgba(251, 146, 60, 0.25) !important;
+      }
+      .pnx-app-card.accent-pink:hover {
+        border-color: rgba(244, 114, 182, 0.6) !important;
+        box-shadow: var(--shadow-2xl), 0 0 30px rgba(244, 114, 182, 0.25) !important;
+      }
+
+      .pnx-app-card.accent-teal .pnx-app-icon {
+        background: linear-gradient(135deg, #2dd4bf 0%, #0d9488 100%);
+      }
+      .pnx-app-card.accent-purple .pnx-app-icon {
+        background: var(--gradient-purple-glow);
+      }
+      .pnx-app-card.accent-orange .pnx-app-icon {
+        background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+      }
+      .pnx-app-card.accent-pink .pnx-app-icon {
+        background: linear-gradient(135deg, #f472b6 0%, #db2777 100%);
+      }
+
+      .stat-card {
+        position: relative;
+        overflow: hidden;
+      }
+      .stat-card .stat-number,
+      .stat-card .stat-label,
+      .stat-card .stat-desc {
+        position: relative;
+        z-index: 1;
+      }
+      .stat-card::after {
+        content: "";
+        position: absolute;
+        right: -20px;
+        bottom: -20px;
+        width: 110px;
+        height: 90px;
+        background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+        background-size: 12px 12px;
+        -webkit-mask-image: linear-gradient(135deg, transparent 30%, #000 100%);
+        mask-image: linear-gradient(135deg, transparent 30%, #000 100%);
+        opacity: 0.16;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .stats-grid .stat-card:nth-child(1) {
+        color: #2563eb;
+        border-color: rgba(37, 99, 235, 0.25) !important;
+      }
+      .stats-grid .stat-card:nth-child(2) {
+        color: #0ea5e9;
+        border-color: rgba(14, 165, 233, 0.25) !important;
+      }
+      .stats-grid .stat-card:nth-child(3) {
+        color: #8b5cf6;
+        border-color: rgba(139, 92, 246, 0.25) !important;
+      }
+      .stats-grid .stat-card:nth-child(4) {
+        color: #10b981;
+        border-color: rgba(16, 185, 129, 0.25) !important;
+      }
+      .stats-grid .stat-card:nth-child(5) {
+        color: #f59e0b;
+        border-color: rgba(245, 158, 11, 0.25) !important;
+      }
+
+      .stats-grid .stat-card:nth-child(1):hover {
+        border-color: rgba(37, 99, 235, 0.5) !important;
+        box-shadow: var(--shadow-xl), 0 0 30px rgba(37, 99, 235, 0.2) !important;
+      }
+      .stats-grid .stat-card:nth-child(2):hover {
+        border-color: rgba(14, 165, 233, 0.5) !important;
+        box-shadow: var(--shadow-xl), 0 0 30px rgba(14, 165, 233, 0.2) !important;
+      }
+      .stats-grid .stat-card:nth-child(3):hover {
+        border-color: rgba(139, 92, 246, 0.5) !important;
+        box-shadow: var(--shadow-xl), 0 0 30px rgba(139, 92, 246, 0.2) !important;
+      }
+      .stats-grid .stat-card:nth-child(4):hover {
+        border-color: rgba(16, 185, 129, 0.5) !important;
+        box-shadow: var(--shadow-xl), 0 0 30px rgba(16, 185, 129, 0.2) !important;
+      }
+      .stats-grid .stat-card:nth-child(5):hover {
+        border-color: rgba(245, 158, 11, 0.5) !important;
+        box-shadow: var(--shadow-xl), 0 0 30px rgba(245, 158, 11, 0.2) !important;
+      }
+
+      .contact-info-card {
+        position: relative;
+        overflow: hidden;
+      }
+      .contact-info-card .contact-icon,
+      .contact-info-card > div:last-child {
+        position: relative;
+        z-index: 1;
+      }
+      .contact-info-card::after {
+        content: "";
+        position: absolute;
+        right: -20px;
+        bottom: -20px;
+        width: 110px;
+        height: 90px;
+        background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+        background-size: 12px 12px;
+        -webkit-mask-image: linear-gradient(135deg, transparent 30%, #000 100%);
+        mask-image: linear-gradient(135deg, transparent 30%, #000 100%);
+        opacity: 0.15;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .contact-info-card.accent-blue {
+        color: var(--primary);
+        border-color: rgba(37, 99, 235, 0.25);
+      }
+      .contact-info-card.accent-purple {
+        color: #8b5cf6;
+        border-color: rgba(139, 92, 246, 0.25);
+      }
+      .contact-info-card.accent-orange {
+        color: #f97316;
+        border-color: rgba(249, 115, 22, 0.25);
+      }
+
+      .contact-info-card.accent-blue:hover {
+        border-color: rgba(37, 99, 235, 0.5);
+        box-shadow: var(--shadow-md), 0 0 24px rgba(37, 99, 235, 0.2);
+      }
+      .contact-info-card.accent-purple:hover {
+        border-color: rgba(139, 92, 246, 0.5);
+        box-shadow: var(--shadow-md), 0 0 24px rgba(139, 92, 246, 0.2);
+      }
+      .contact-info-card.accent-orange:hover {
+        border-color: rgba(249, 115, 22, 0.5);
+        box-shadow: var(--shadow-md), 0 0 24px rgba(249, 115, 22, 0.2);
+      }
+
+      .contact-info-card.accent-purple:hover .contact-icon {
+        background: #8b5cf6;
+      }
+      .contact-info-card.accent-orange:hover .contact-icon {
+        background: #f97316;
       }
 
       .bento-animate {
@@ -4509,13 +4845,6 @@
       .industry-card:hover .industry-icon,
       .contact-info-card:hover .contact-icon {
         transform: scale(1.1) !important;
-      }
-
-      #hero {
-        margin-top: calc(var(--nav-height, 70px) + 2rem) !important;
-        padding-top: 3rem !important;
-        padding-bottom: 4rem !important;
-        min-height: auto !important;
       }
 
       @keyframes hero-fade-up {
@@ -8575,6 +8904,35 @@
           <span class="particle p5"></span>
           <span class="particle p6"></span>
         </div>
+        <div class="hero-waves" aria-hidden="true">
+          <svg
+            class="hero-wave-layer wave-back"
+            viewBox="0 0 2400 200"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,100 C150,140 300,60 450,100 C600,140 750,60 900,100 C1050,140 1150,110 1200,100 C1350,140 1500,60 1650,100 C1800,140 1950,60 2100,100 C2250,140 2350,110 2400,100 L2400,200 L0,200 Z"
+            ></path>
+          </svg>
+          <svg
+            class="hero-wave-layer wave-mid"
+            viewBox="0 0 2400 200"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,120 C180,80 340,150 520,110 C700,70 860,140 1040,105 C1160,80 1180,120 1200,120 C1380,80 1540,150 1720,110 C1900,70 2060,140 2240,105 C2360,80 2380,120 2400,120 L2400,200 L0,200 Z"
+            ></path>
+          </svg>
+          <svg
+            class="hero-wave-layer wave-front"
+            viewBox="0 0 2400 200"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,140 C200,170 400,120 600,145 C800,170 1000,110 1200,140 C1400,170 1600,120 1800,145 C2000,170 2200,110 2400,140 L2400,200 L0,200 Z"
+            ></path>
+          </svg>
+        </div>
         <div class="container">
           <div class="hero-content split-hero">
             <div class="hero-text-split" data-reveal>
@@ -8934,7 +9292,7 @@
 
             <div class="about-bento-cards" data-reveal data-reveal-delay="2">
               <div
-                class="about-bento-card bento-large bento-animate polished-bento aiom-style-39"
+                class="about-bento-card bento-large bento-animate polished-bento accent-blue aiom-style-39"
               >
                 <div class="about-bento-header">
                   <div class="about-bento-icon bg-blue-gradient">
@@ -8954,7 +9312,7 @@
               </div>
 
               <div
-                class="about-bento-card bento-animate polished-bento aiom-style-40"
+                class="about-bento-card bento-animate polished-bento accent-teal aiom-style-40"
               >
                 <div class="about-bento-header">
                   <div class="about-bento-icon bg-teal-gradient">
@@ -8971,7 +9329,7 @@
               </div>
 
               <div
-                class="about-bento-card bento-animate polished-bento aiom-style-41"
+                class="about-bento-card bento-animate polished-bento accent-purple aiom-style-41"
               >
                 <div class="about-bento-header">
                   <div class="about-bento-icon bg-purple-gradient">
@@ -8988,7 +9346,7 @@
               </div>
 
               <div
-                class="about-bento-card bento-wide bento-animate polished-bento aiom-style-42"
+                class="about-bento-card bento-wide bento-animate polished-bento accent-orange aiom-style-42"
               >
                 <div class="about-bento-header">
                   <div class="about-bento-icon bg-orange-gradient">
@@ -9371,7 +9729,7 @@
               </div>
 
               <div class="pnx-apps-grid">
-                <div class="pnx-app-card polished-app-card" data-reveal>
+                <div class="pnx-app-card polished-app-card accent-blue" data-reveal>
                   <div class="pnx-app-header">
                     <div class="pnx-app-icon">
                       <i
@@ -9390,7 +9748,7 @@
                 </div>
 
                 <div
-                  class="pnx-app-card polished-app-card"
+                  class="pnx-app-card polished-app-card accent-teal"
                   data-reveal
                   data-reveal-delay="1"
                 >
@@ -9411,7 +9769,7 @@
                   </div>
                 </div>
 
-                <div class="pnx-app-card polished-app-card" data-reveal>
+                <div class="pnx-app-card polished-app-card accent-purple" data-reveal>
                   <div class="pnx-app-header">
                     <div class="pnx-app-icon">
                       <i class="fas fa-network-wired c-white aiom-style-46"></i>
@@ -9427,7 +9785,7 @@
                 </div>
 
                 <div
-                  class="pnx-app-card polished-app-card"
+                  class="pnx-app-card polished-app-card accent-orange"
                   data-reveal
                   data-reveal-delay="1"
                 >
@@ -9447,7 +9805,7 @@
                 </div>
 
                 <div
-                  class="pnx-app-card full-width polished-app-card"
+                  class="pnx-app-card full-width polished-app-card accent-pink"
                   data-reveal
                 >
                   <div class="pnx-app-header">
@@ -10382,7 +10740,7 @@
 
             <div data-reveal data-reveal-delay="2">
               <div class="contact-info">
-                <div class="contact-info-card polished-info-card">
+                <div class="contact-info-card polished-info-card accent-blue">
                   <div class="contact-icon bg-blue-light">
                     <i class="fas fa-envelope c-blue"></i>
                   </div>
@@ -10396,7 +10754,7 @@
                   </div>
                 </div>
 
-                <div class="contact-info-card polished-info-card">
+                <div class="contact-info-card polished-info-card accent-purple">
                   <div class="contact-icon bg-purple-light">
                     <i class="fas fa-phone c-purple"></i>
                   </div>
@@ -10408,7 +10766,7 @@
                   </div>
                 </div>
 
-                <div class="contact-info-card polished-info-card">
+                <div class="contact-info-card polished-info-card accent-orange">
                   <div class="contact-icon bg-orange-light">
                     <i class="fas fa-location-dot c-orange"></i>
                   </div>
@@ -10952,6 +11310,17 @@
             setTimeout(() => requestAnimationFrame(scroll), 100);
           }
 
+          function settleBentoAnimations() {
+            const cards = document.querySelectorAll(".bento-animate");
+            cards.forEach((card) => {
+              card.addEventListener(
+                "animationend",
+                () => card.classList.add("anim-settled"),
+                { once: true },
+              );
+            });
+          }
+
           initTheme();
           hideLoader();
           navbarScroll();
@@ -10967,6 +11336,7 @@
           smoothAnchorScroll();
           bindThemeToggle();
           initMarquee();
+          settleBentoAnimations();
         });
       })();
 
