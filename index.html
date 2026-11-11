@@ -1362,120 +1362,18 @@
       }
 
       .nav-cta span,
-      .nav-cta i,
-      .nav-cta .arrow-toggle {
+      .nav-cta i {
         position: relative;
         z-index: 1;
       }
 
-      .arrow-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        width: 1.15em;
-        height: 1.15em;
-        margin-left: 0.35rem;
-        font-style: normal;
-        font-weight: 800;
-        line-height: 1;
-        vertical-align: middle;
-        flex-shrink: 0;
-        transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+      .nav-cta .nav-cta-arrow {
+        transition: transform 0.25s ease;
       }
 
-      .arrow-toggle::before {
-        content: ">";
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
-        font-size: 1.1em;
-        font-weight: 800;
-        line-height: 1;
-        opacity: 1;
-        transform: translateX(0);
-        transition: opacity 0.22s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-      }
-
-      .arrow-toggle::after {
-        content: "→";
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
-        font-size: 1.25em;
-        font-weight: 800;
-        line-height: 1;
-        opacity: 0;
-        transform: translateX(-4px);
-        transition: opacity 0.22s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-      }
-
-      :hover > .arrow-toggle,
-      :hover > * > .arrow-toggle,
-      a:hover .arrow-toggle,
-      button:hover .arrow-toggle,
-      .btn:hover .arrow-toggle,
-      .nav-cta:hover .arrow-toggle,
-      .btn-primary:hover .arrow-toggle,
-      .btn-secondary:hover .arrow-toggle,
-      .card-link-icon:hover .arrow-toggle,
-      .service-card:hover .arrow-toggle,
-      .polished-service-card:hover .arrow-toggle,
-      .custom-case-card:hover .arrow-toggle,
-      .arrow-toggle:hover,
-      a:focus-visible .arrow-toggle,
-      button:focus-visible .arrow-toggle,
-      .btn:focus-visible .arrow-toggle,
-      .nav-cta:focus-visible .arrow-toggle {
+      .nav-cta:hover .nav-cta-arrow,
+      .nav-cta:focus-visible .nav-cta-arrow {
         transform: translateX(4px);
-      }
-
-      :hover > .arrow-toggle::before,
-      :hover > * > .arrow-toggle::before,
-      a:hover .arrow-toggle::before,
-      button:hover .arrow-toggle::before,
-      .btn:hover .arrow-toggle::before,
-      .nav-cta:hover .arrow-toggle::before,
-      .btn-primary:hover .arrow-toggle::before,
-      .btn-secondary:hover .arrow-toggle::before,
-      .card-link-icon:hover .arrow-toggle::before,
-      .service-card:hover .arrow-toggle::before,
-      .polished-service-card:hover .arrow-toggle::before,
-      .custom-case-card:hover .arrow-toggle::before,
-      .arrow-toggle:hover::before,
-      a:focus-visible .arrow-toggle::before,
-      button:focus-visible .arrow-toggle::before,
-      .btn:focus-visible .arrow-toggle::before,
-      .nav-cta:focus-visible .arrow-toggle::before {
-        opacity: 0;
-        transform: translateX(4px);
-      }
-
-      :hover > .arrow-toggle::after,
-      :hover > * > .arrow-toggle::after,
-      a:hover .arrow-toggle::after,
-      button:hover .arrow-toggle::after,
-      .btn:hover .arrow-toggle::after,
-      .nav-cta:hover .arrow-toggle::after,
-      .btn-primary:hover .arrow-toggle::after,
-      .btn-secondary:hover .arrow-toggle::after,
-      .card-link-icon:hover .arrow-toggle::after,
-      .service-card:hover .arrow-toggle::after,
-      .polished-service-card:hover .arrow-toggle::after,
-      .custom-case-card:hover .arrow-toggle::after,
-      .arrow-toggle:hover::after,
-      a:focus-visible .arrow-toggle::after,
-      button:focus-visible .arrow-toggle::after,
-      .btn:focus-visible .arrow-toggle::after,
-      .nav-cta:focus-visible .arrow-toggle::after {
-        opacity: 1;
-        transform: translateX(0);
       }
 
       .nav-cta:hover,
@@ -7099,8 +6997,7 @@
         font-weight: 600;
         margin-right: 0;
       }
-      .card-link-icon i,
-      .card-link-icon .arrow-toggle {
+      .card-link-icon i {
         transform: translateX(0);
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         font-size: 1rem;
@@ -7117,8 +7014,7 @@
         opacity: 1;
         margin-right: 8px;
       }
-      .polished-service-card:hover .card-link-icon i,
-      .polished-service-card:hover .card-link-icon .arrow-toggle {
+      .polished-service-card:hover .card-link-icon i {
         transform: translateX(4px);
       }
       .service-card {
@@ -9310,10 +9206,7 @@
           </button>
           <a class="nav-cta" href="#contact">
             <span>Get Started</span>
-            <span
-              class="arrow-toggle nav-cta-arrow"
-              aria-hidden="true"
-            ></span>
+            <i class="fas fa-arrow-right nav-cta-arrow" aria-hidden="true"></i>
           </a>
           <button
             id="mobileToggle"
@@ -9415,8 +9308,8 @@
                   class="btn-primary btn-gradient btn-hero-glow"
                   ><i class="fas fa-rocket"></i>
                   <span>Explore Services</span>
-                  <span class="arrow-toggle" aria-hidden="true"></span></a
-                >
+                  <i class="fas fa-arrow-right" aria-hidden="true"></i
+                ></a>
                 <a
                   href="#contact"
                   class="btn-secondary btn-outline btn-hero-outline"
