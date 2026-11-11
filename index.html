@@ -6552,6 +6552,42 @@
         text-align: center;
         margin-bottom: var(--space-12);
       }
+      @keyframes teamSparkleTwinkle {
+        0%, 100% {
+          transform: scale(1) rotate(0deg);
+          opacity: 0.55;
+          filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.4));
+        }
+        50% {
+          transform: scale(1.35) rotate(18deg);
+          opacity: 1;
+          filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.9));
+        }
+      }
+
+      @keyframes teamUnderlineGlow {
+        0%, 100% {
+          opacity: 0.65;
+          filter: drop-shadow(0 0 4px rgba(37, 99, 235, 0.35));
+        }
+        50% {
+          opacity: 1;
+          filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.75));
+        }
+      }
+
+      @keyframes teamBeamShimmer {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
       .team-badge {
         background: rgba(37, 99, 235, 0.1) !important;
         color: var(--primary) !important;
@@ -6562,7 +6598,13 @@
         text-transform: uppercase;
         margin: 0 auto var(--space-6) !important;
         display: inline-flex !important;
+        transition: transform 0.35s ease, box-shadow 0.35s ease !important;
       }
+      .team-badge:hover {
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+      }
+
       .team-title-custom {
         font-size: 3rem !important;
         font-weight: 800 !important;
@@ -6584,14 +6626,21 @@
         left: 0px;
         right: 0px;
         height: 6px;
-        background: rgba(37, 99, 235, 0.4);
-        border-radius: 10px;
+        background: linear-gradient(90deg, #2563eb, #38bdf8, #818cf8, #2563eb);
+        background-size: 200% 100%;
+        border-radius: 9999px;
         transform: rotate(-2deg);
+        animation: teamUnderlineGlow 3s ease-in-out infinite;
       }
-      .sparkle-left,
+      .sparkle-left {
+        font-size: 1.5rem;
+        display: inline-block;
+        animation: teamSparkleTwinkle 2.8s ease-in-out infinite;
+      }
       .sparkle-right {
         font-size: 1.5rem;
-        opacity: 0.6;
+        display: inline-block;
+        animation: teamSparkleTwinkle 2.8s ease-in-out infinite 1.4s;
       }
 
       .team-card {
@@ -6599,14 +6648,23 @@
         border-radius: 8px !important;
         padding: var(--space-10) var(--space-8) var(--space-8) !important;
         text-align: center;
-        border: none !important;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04) !important;
+        border: 1px solid rgba(226, 232, 240, 0.85) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
         position: relative;
-        overflow: visible !important;
+        overflow: hidden !important;
+        isolation: isolate;
+        transition:
+          transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+          border-color 0.4s ease !important;
       }
       [data-theme="dark"] .team-card {
         background: #111827 !important;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3) !important;
+      }
+      .team-card:hover {
+        transform: translateY(-10px) scale(1.02) !important;
       }
 
       .team-card::before {
@@ -6615,19 +6673,34 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 60px;
-        border-radius: 8px 8px 0 0 !important;
-        opacity: 0.15;
-        pointer-events: none;
+        height: 3px !important;
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
+        background-size: 200% 100% !important;
+        opacity: 0 !important;
+        transform: scaleX(0) !important;
+        transform-origin: center !important;
+        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease !important;
+        pointer-events: none !important;
+        z-index: 6 !important;
       }
       .team-card.theme-blue::before {
-        background: linear-gradient(180deg, #3b82f6 0%, transparent 100%);
+        background: linear-gradient(90deg, #2563eb, #38bdf8, #818cf8, #2563eb) !important;
+        box-shadow: 0 2px 14px rgba(37, 99, 235, 0.5) !important;
       }
       .team-card.theme-green::before {
-        background: linear-gradient(180deg, #10b981 0%, transparent 100%);
+        background: linear-gradient(90deg, #059669, #34d399, #10b981, #059669) !important;
+        box-shadow: 0 2px 14px rgba(16, 185, 129, 0.5) !important;
       }
       .team-card.theme-purple::before {
-        background: linear-gradient(180deg, #8b5cf6 0%, transparent 100%);
+        background: linear-gradient(90deg, #7c3aed, #c084fc, #a855f7, #7c3aed) !important;
+        box-shadow: 0 2px 14px rgba(124, 58, 237, 0.5) !important;
+      }
+
+      .team-card:hover::before {
+        opacity: 1 !important;
+        transform: scaleX(1) !important;
+        animation: teamBeamShimmer 2.8s ease infinite !important;
       }
 
       .team-card.theme-blue {
@@ -6641,29 +6714,29 @@
       }
 
       .team-card.theme-blue:hover {
-        border-color: rgba(59, 130, 246, 0.4) !important;
-        box-shadow: 0 20px 48px -10px rgba(15, 23, 42, 0.12), 0 0 32px rgba(59, 130, 246, 0.18) !important;
+        border-color: rgba(59, 130, 246, 0.5) !important;
+        box-shadow: 0 26px 54px -10px rgba(15, 23, 42, 0.14), 0 0 35px rgba(59, 130, 246, 0.28) !important;
       }
       .team-card.theme-green:hover {
-        border-color: rgba(16, 185, 129, 0.4) !important;
-        box-shadow: 0 20px 48px -10px rgba(15, 23, 42, 0.12), 0 0 32px rgba(16, 185, 129, 0.18) !important;
+        border-color: rgba(16, 185, 129, 0.5) !important;
+        box-shadow: 0 26px 54px -10px rgba(15, 23, 42, 0.14), 0 0 35px rgba(16, 185, 129, 0.28) !important;
       }
       .team-card.theme-purple:hover {
-        border-color: rgba(139, 92, 246, 0.4) !important;
-        box-shadow: 0 20px 48px -10px rgba(15, 23, 42, 0.12), 0 0 32px rgba(139, 92, 246, 0.18) !important;
+        border-color: rgba(139, 92, 246, 0.5) !important;
+        box-shadow: 0 26px 54px -10px rgba(15, 23, 42, 0.14), 0 0 35px rgba(139, 92, 246, 0.28) !important;
       }
 
       [data-theme="dark"] .team-card.theme-blue:hover {
-        border-color: rgba(96, 165, 250, 0.45) !important;
-        box-shadow: 0 24px 56px -12px rgba(0, 0, 0, 0.85), 0 0 35px rgba(59, 130, 246, 0.28) !important;
+        border-color: rgba(96, 165, 250, 0.6) !important;
+        box-shadow: 0 28px 60px -12px rgba(0, 0, 0, 0.85), 0 0 40px rgba(59, 130, 246, 0.35) !important;
       }
       [data-theme="dark"] .team-card.theme-green:hover {
-        border-color: rgba(52, 211, 153, 0.45) !important;
-        box-shadow: 0 24px 56px -12px rgba(0, 0, 0, 0.85), 0 0 35px rgba(16, 185, 129, 0.28) !important;
+        border-color: rgba(52, 211, 153, 0.6) !important;
+        box-shadow: 0 28px 60px -12px rgba(0, 0, 0, 0.85), 0 0 40px rgba(16, 185, 129, 0.35) !important;
       }
       [data-theme="dark"] .team-card.theme-purple:hover {
-        border-color: rgba(192, 132, 252, 0.45) !important;
-        box-shadow: 0 24px 56px -12px rgba(0, 0, 0, 0.85), 0 0 35px rgba(139, 92, 246, 0.28) !important;
+        border-color: rgba(192, 132, 252, 0.6) !important;
+        box-shadow: 0 28px 60px -12px rgba(0, 0, 0, 0.85), 0 0 40px rgba(139, 92, 246, 0.35) !important;
       }
 
       .avatar-wrapper {
@@ -6679,15 +6752,29 @@
         margin: 0 !important;
         border-radius: 50% !important;
         font-size: 2.2rem !important;
+        font-weight: 800 !important;
         border: 4px solid #fff !important;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
-        animation: none !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.45s ease !important;
       }
       [data-theme="dark"] .team-avatar {
         border-color: #1f2937 !important;
+      }
+
+      .team-card.theme-blue:hover .team-avatar {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25), 0 12px 28px rgba(37, 99, 235, 0.35) !important;
+      }
+      .team-card.theme-green:hover .team-avatar {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.25), 0 12px 28px rgba(16, 185, 129, 0.35) !important;
+      }
+      .team-card.theme-purple:hover .team-avatar {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.25), 0 12px 28px rgba(139, 92, 246, 0.35) !important;
       }
 
       .avatar-badge {
@@ -6697,17 +6784,36 @@
         width: 36px;
         height: 36px;
         background: #fff;
-        border-radius: 50%;
+        border-radius: 50% !important;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 14px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
         border: 3px solid #fff;
+        transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease !important;
       }
       [data-theme="dark"] .avatar-badge {
         background: #1f2937;
         border-color: #1f2937;
+      }
+
+      .team-card:hover .avatar-badge {
+        transform: scale(1.22) rotate(10deg) !important;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+      }
+
+      .avatar-badge i {
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+      }
+      .team-card:hover .avatar-badge .fa-star {
+        transform: rotate(36deg) scale(1.15) !important;
+      }
+      .team-card:hover .avatar-badge .fa-rocket {
+        transform: translateY(-2px) rotate(-15deg) scale(1.15) !important;
+      }
+      .team-card:hover .avatar-badge .fa-code {
+        transform: scale(1.2) !important;
       }
 
       .badge-blue {
@@ -6735,17 +6841,29 @@
         font-weight: 800 !important;
         margin-bottom: var(--space-2) !important;
         color: var(--text) !important;
+        letter-spacing: -0.015em;
+        transition: color 0.35s ease;
       }
       .team-role {
         font-size: 0.95rem !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
         margin-bottom: var(--space-5) !important;
+        transition: letter-spacing 0.35s ease, transform 0.35s ease !important;
+        display: inline-block;
+      }
+      .team-card:hover .team-role {
+        letter-spacing: 0.04em !important;
+        transform: translateY(-1px);
       }
       .team-bio {
         font-size: 0.9rem !important;
-        line-height: 1.6 !important;
+        line-height: 1.65 !important;
         color: var(--text-muted) !important;
         padding: 0 var(--space-2);
+        transition: color 0.35s ease !important;
+      }
+      .team-card:hover .team-bio {
+        color: var(--text) !important;
       }
 
       .team-socials {
@@ -6754,6 +6872,20 @@
         gap: var(--space-3) !important;
         margin-top: var(--space-8) !important;
       }
+
+      .team-card:hover .team-social:nth-child(1) {
+        transform: translateY(-2px);
+        transition-delay: 0.04s !important;
+      }
+      .team-card:hover .team-social:nth-child(2) {
+        transform: translateY(-2px);
+        transition-delay: 0.08s !important;
+      }
+      .team-card:hover .team-social:nth-child(3) {
+        transform: translateY(-2px);
+        transition-delay: 0.12s !important;
+      }
+
       .team-social {
         width: 42px !important;
         height: 42px !important;
@@ -6766,6 +6898,12 @@
         justify-content: center !important;
         text-decoration: none !important;
         transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease !important;
+      }
+      .team-social:hover {
+        transform: translateY(-6px) scale(1.18) !important;
+      }
+      .team-social:hover i {
+        transform: scale(1.18) rotate(4deg) !important;
       }
       [data-theme="dark"] .team-social {
         background: rgba(255, 255, 255, 0.08) !important;
@@ -10278,7 +10416,12 @@
         .contact-info-card::before,
         .spotlight-card-content::before,
         .team-card::before,
-        .service-card::before {
+        .service-card::before,
+        .sparkle-left,
+        .sparkle-right,
+        .aiom-underline::after,
+        .avatar-badge,
+        .team-avatar {
           animation: none !important;
           transition: none !important;
           transform: none !important;
