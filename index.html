@@ -6016,13 +6016,37 @@
         aspect-ratio: auto !important;
       }
 
+      .footer-social-link {
+        width: 44px;
+        height: 44px;
+        border-radius: var(--radius-full);
+        background: rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.15rem;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+        text-decoration: none;
+      }
+
+      .footer-social-link i,
+      .team-social i {
+        transition: transform 0.3s ease, color 0.3s ease !important;
+      }
+
       .footer-social-link .fa-linkedin-in,
       .team-social .fa-linkedin-in {
-        color: #0077b5;
+        color: #0a66c2;
       }
+      .footer-social-link .fa-x-twitter,
       .footer-social-link .fa-twitter,
+      .team-social .fa-x-twitter,
       .team-social .fa-twitter {
-        color: #1da1f2;
+        color: #ffffff;
       }
       .footer-social-link .fa-facebook-f,
       .team-social .fa-facebook-f {
@@ -6040,9 +6064,59 @@
       .team-social .fa-github {
         color: var(--text);
       }
+
+      .footer-social-link:hover,
+      .team-social:hover {
+        transform: translateY(-4px) scale(1.12) !important;
+      }
+
       .footer-social-link:hover i,
       .team-social:hover i {
-        color: var(--text-on-primary) !important;
+        color: #ffffff !important;
+        transform: scale(1.1);
+      }
+
+      .footer-social-link:has(.fa-linkedin-in):hover,
+      .footer-social-link[aria-label*="LinkedIn"]:hover,
+      .team-social:has(.fa-linkedin-in):hover {
+        background: #0a66c2 !important;
+        border-color: #0a66c2 !important;
+        box-shadow: 0 8px 24px rgba(10, 102, 194, 0.5) !important;
+      }
+
+      .footer-social-link:has(.fa-x-twitter):hover,
+      .footer-social-link:has(.fa-twitter):hover,
+      .footer-social-link[aria-label*="Twitter"]:hover,
+      .footer-social-link[aria-label*="X"]:hover,
+      .team-social:has(.fa-x-twitter):hover,
+      .team-social:has(.fa-twitter):hover {
+        background: #000000 !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
+        box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25) !important;
+      }
+
+      .footer-social-link:has(.fa-facebook-f):hover,
+      .footer-social-link[aria-label*="Facebook"]:hover,
+      .team-social:has(.fa-facebook-f):hover {
+        background: #1877f2 !important;
+        border-color: #1877f2 !important;
+        box-shadow: 0 8px 24px rgba(24, 119, 242, 0.5) !important;
+      }
+
+      .footer-social-link:has(.fa-instagram):hover,
+      .footer-social-link[aria-label*="Instagram"]:hover,
+      .team-social:has(.fa-instagram):hover {
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+        border-color: transparent !important;
+        box-shadow: 0 8px 24px rgba(225, 48, 108, 0.5) !important;
+      }
+
+      .footer-social-link:has(.fa-youtube):hover,
+      .footer-social-link[aria-label*="YouTube"]:hover,
+      .team-social:has(.fa-youtube):hover {
+        background: #ff0000 !important;
+        border-color: #ff0000 !important;
+        box-shadow: 0 8px 24px rgba(255, 0, 0, 0.5) !important;
       }
       .site-footer {
         --bg-subtle: #0b1120 !important;
@@ -6898,78 +6972,187 @@
         transform: translateY(-15px) scale(1.1) rotateY(15deg) !important;
       }
 
-      .flip-card-container {
-        background-color: transparent;
-        perspective: 1200px;
-        height: 280px;
-        border-radius: 8px !important;
+      .industries-grid {
+        display: grid !important;
+        grid-template-columns: repeat(6, 1fr) !important;
+        gap: 1rem;
+        perspective: 1400px;
+        position: relative;
+        z-index: 2;
+        width: 100%;
       }
+
+      @media (max-width: 1100px) {
+        .industries-grid {
+          display: flex !important;
+          flex-wrap: nowrap !important;
+          overflow-x: auto !important;
+          scroll-snap-type: x mandatory;
+          padding-bottom: 1.25rem;
+          -webkit-overflow-scrolling: touch;
+          gap: 1rem;
+        }
+        .industries-grid .flip-card-container {
+          flex: 0 0 240px !important;
+          min-width: 240px !important;
+          scroll-snap-align: start;
+        }
+      }
+
+      .industries-grid::-webkit-scrollbar {
+        height: 6px;
+      }
+      .industries-grid::-webkit-scrollbar-track {
+        background: rgba(15, 23, 42, 0.06);
+        border-radius: 9999px;
+      }
+      .industries-grid::-webkit-scrollbar-thumb {
+        background: rgba(37, 99, 235, 0.35);
+        border-radius: 9999px;
+      }
+      [data-theme="dark"] .industries-grid::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.06);
+      }
+      [data-theme="dark"] .industries-grid::-webkit-scrollbar-thumb {
+        background: rgba(56, 189, 248, 0.35);
+      }
+
+      .flip-card-container {
+        background-color: transparent !important;
+        perspective: 1400px;
+        -webkit-perspective: 1400px;
+        height: 330px;
+        border-radius: 18px;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .flip-card-container:hover {
+        transform: translateY(-8px);
+      }
+
       .flip-card-inner {
         position: relative;
         width: 100%;
         height: 100%;
         text-align: center;
-        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        transform-style: preserve-3d;
-        border-radius: 8px !important;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transform-style: preserve-3d !important;
+        -webkit-transform-style: preserve-3d !important;
+        transition: transform 0.85s cubic-bezier(0.34, 1.4, 0.64, 1) !important;
+        border-radius: 18px;
       }
-      .flip-card-container:hover .flip-card-inner {
-        transform: rotateY(180deg);
+
+      .flip-card-container:hover .flip-card-inner,
+      .flip-card-container:focus-within .flip-card-inner,
+      .flip-card-container.flipped .flip-card-inner {
+        transform: rotateY(180deg) !important;
       }
-      [data-theme="dark"] .flip-card-inner {
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-      }
+
       .flip-card-front,
       .flip-card-back {
         position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 8px !important;
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+        border-radius: 18px !important;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 24px;
+        padding: 1.75rem 1rem;
+        box-sizing: border-box;
       }
+
       .flip-card-front {
-        background-color: #fff;
-        border: 1px solid var(--border);
+        transform: rotateY(0deg) translateZ(1px);
+        background: rgba(255, 255, 255, 0.92) !important;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(226, 232, 240, 0.9) !important;
+        box-shadow:
+          0 10px 25px -4px rgba(15, 23, 42, 0.08),
+          0 4px 10px -2px rgba(15, 23, 42, 0.04),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+        transition: box-shadow 0.4s ease, border-color 0.4s ease;
       }
+
       [data-theme="dark"] .flip-card-front {
-        background-color: #1e293b;
+        background: rgba(19, 27, 46, 0.88) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        box-shadow:
+          0 12px 30px -4px rgba(0, 0, 0, 0.65),
+          0 4px 12px -2px rgba(0, 0, 0, 0.45),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
       }
+
+      .flip-card-container:hover .flip-card-front {
+        box-shadow:
+          0 24px 48px -8px rgba(15, 23, 42, 0.14),
+          0 10px 22px -4px rgba(15, 23, 42, 0.08),
+          inset 0 1px 0 #ffffff !important;
+      }
+
+      [data-theme="dark"] .flip-card-container:hover .flip-card-front {
+        box-shadow:
+          0 28px 56px -8px rgba(0, 0, 0, 0.85),
+          0 0 35px -4px rgba(14, 165, 233, 0.22),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+      }
+
       .flip-card-back {
-        transform: rotateY(180deg);
-        color: #fff;
-        border: none;
+        transform: rotateY(180deg) translateZ(1px) !important;
+        color: #ffffff !important;
+        border-radius: 18px !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        box-shadow:
+          0 24px 48px -8px rgba(15, 23, 42, 0.28),
+          0 10px 20px -4px rgba(15, 23, 42, 0.18),
+          inset 0 1px 1px rgba(255, 255, 255, 0.4) !important;
+        text-align: center;
+        padding: 1.75rem 1.15rem;
       }
+
+      .flip-card-back .back-icon {
+        font-size: 1.85rem;
+        margin-bottom: 0.65rem;
+        color: #ffffff;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+        animation: iconBreathingSlow 4s ease-in-out infinite;
+      }
+
       .flip-card-back h4 {
-        color: #fff;
-        margin-bottom: 16px;
-        font-size: 1.25rem;
-        font-weight: 700;
+        color: #ffffff !important;
+        font-size: 1.08rem !important;
+        font-weight: 800 !important;
+        letter-spacing: -0.01em;
+        margin: 0 0 0.55rem 0 !important;
+        line-height: 1.35 !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
       }
+
       .flip-card-back p {
-        color: rgba(255, 255, 255, 0.95);
-        font-size: 0.75rem;
-        line-height: 1.6;
-        margin: 0;
+        color: #f8fafc !important;
+        font-size: 0.82rem !important;
+        font-weight: 450 !important;
+        line-height: 1.55 !important;
+        margin: 0 !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       }
-      .back-icon {
-        font-size: 2.2rem;
-        margin-bottom: 16px;
-        opacity: 0.9;
-      }
+
       .flip-icon-wrapper {
-        margin-bottom: 24px;
+        margin-bottom: 1.25rem;
       }
+
       .flip-card-front h4 {
         margin: 0;
-        font-size: 1.25rem;
-        font-weight: 700;
+        font-size: 1.08rem;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        line-height: 1.35;
         color: var(--text);
       }
 
@@ -6993,22 +7176,22 @@
       }
 
       .bg-teal-gradient {
-        background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+        background: linear-gradient(145deg, #0f766e 0%, #0d9488 45%, #06b6d4 100%) !important;
       }
       .bg-blue-gradient-solid {
-        background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%);
+        background: linear-gradient(145deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%) !important;
       }
       .bg-purple-gradient-solid {
-        background: linear-gradient(135deg, #6b21a8 0%, #581c87 100%);
+        background: linear-gradient(145deg, #581c87 0%, #7c3aed 50%, #8b5cf6 100%) !important;
       }
       .bg-yellow-gradient {
-        background: linear-gradient(135deg, #a16207 0%, #713f12 100%);
+        background: linear-gradient(145deg, #78350f 0%, #b45309 50%, #d97706 100%) !important;
       }
       .bg-orange-gradient {
-        background: linear-gradient(135deg, #c2410c 0%, #9a3412 100%);
+        background: linear-gradient(145deg, #7c2d12 0%, #c2410c 50%, #ea580c 100%) !important;
       }
       .bg-cyan-gradient {
-        background: linear-gradient(135deg, #0e7490 0%, #155e75 100%);
+        background: linear-gradient(145deg, #164e63 0%, #0891b2 50%, #06b6d4 100%) !important;
       }
 
       .spotlight-grid {
@@ -8542,8 +8725,7 @@
         -webkit-backdrop-filter: var(--glass-blur);
       }
 
-      .pnx-app-card,
-      .footer-social-link {
+      .pnx-app-card {
         background: var(--glass-bg-dark) !important;
         backdrop-filter: var(--glass-blur) !important;
         -webkit-backdrop-filter: var(--glass-blur) !important;
@@ -9410,7 +9592,6 @@
       .service-card,
       .about-bento-card,
       .pnx-app-card,
-      .flip-card-inner,
       .spotlight-card,
       .stat-card,
       .case-card,
@@ -9434,7 +9615,6 @@
       [data-theme="dark"] .service-card,
       [data-theme="dark"] .about-bento-card,
       [data-theme="dark"] .pnx-app-card,
-      [data-theme="dark"] .flip-card-inner,
       [data-theme="dark"] .spotlight-card,
       [data-theme="dark"] .stat-card,
       [data-theme="dark"] .case-card,
@@ -11399,8 +11579,8 @@
                 <a href="#" class="team-social" aria-label="LinkedIn"
                   ><i class="fab fa-linkedin-in"></i
                 ></a>
-                <a href="#" class="team-social" aria-label="Twitter"
-                  ><i class="fab fa-twitter"></i
+                <a href="#" class="team-social" aria-label="X (Twitter)"
+                  ><i class="fab fa-x-twitter"></i
                 ></a>
               </div>
             </div>
@@ -11465,8 +11645,8 @@
                 <a href="#" class="team-social" aria-label="LinkedIn"
                   ><i class="fab fa-linkedin-in"></i
                 ></a>
-                <a href="#" class="team-social" aria-label="Twitter"
-                  ><i class="fab fa-twitter"></i
+                <a href="#" class="team-social" aria-label="X (Twitter)"
+                  ><i class="fab fa-x-twitter"></i
                 ></a>
               </div>
             </div>
@@ -11807,8 +11987,8 @@
               <a href="#" class="footer-social-link" aria-label="LinkedIn"
                 ><i class="fab fa-linkedin-in"></i
               ></a>
-              <a href="#" class="footer-social-link" aria-label="Twitter"
-                ><i class="fab fa-twitter"></i
+              <a href="#" class="footer-social-link" aria-label="X (Twitter)"
+                ><i class="fab fa-x-twitter"></i
               ></a>
               <a href="#" class="footer-social-link" aria-label="Facebook"
                 ><i class="fab fa-facebook-f"></i
@@ -12747,6 +12927,12 @@
           settleBentoAnimations();
           initHeroInteractive();
           initHeroRestart();
+
+          document.querySelectorAll(".flip-card-container").forEach((card) => {
+            card.addEventListener("click", () => {
+              card.classList.toggle("flipped");
+            });
+          });
         });
       })();
 
